@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% load eximaginate %}
+{% load staticfiles %}
+{% load tags_filters %}
+<link rel="stylesheet" href="{% static 'css/pagina.css' %}">
+  {% block meio %}
+
+        {% for each in data %}
+       <div> 
+           
+
+     
+<a href= "/tvshow/id/{{ each.1 }}">
+<h3> {{ each.0 }} </h3>
+<img src="{{ each.2}}"/>
+ </a>
+
+        </div>
+        {% endfor %}
+
+
+  {% endblock %}
+
+
+
+
+
+
+
+
+
+
+

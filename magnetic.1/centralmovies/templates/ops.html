@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/pagina.css' %}">
+ {% block meio %}
+
+<h1>Ops! </h1>
+<h3> Parece que não temos ainda este link, lamentamos pelo trastorno</h3>
+Erro: {% if mensagem is nule %}
+	{{ "Não sabemos o problema" }}
+	{% else %}
+	{{ mensagem }}
+	
+	{% endif %}	
+{% endblock %}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+
+{% extends "base.html" %}
+{% load tags_filters %}
+
+        {% block meio %}   
+
+<h1> New movies  </h1>
+{% for new in video %}
+
+<a href= "http://www.imdb.com/{{ new }}"/>
+
+{% endfor %} 
+
+{% for title in data %}
+ <div>
+        <h3> {{ title.0 }} </h3>
+
+
+<a href= "{{ title.0 | magnetize }}"><h5> Download</h5> </a>
+
+
+
+        </div>
+
+{% endfor %}
+	
+  
+
+{% endblock %}
+
+ 

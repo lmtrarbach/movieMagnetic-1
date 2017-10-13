@@ -1,0 +1,152 @@
+
+{% load staticfiles %}
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title>IMDB Pirate</title>
+        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+        
+        <link rel="stylesheet" href="{% static 'css/pagina.css' %}">
+        <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+     
+  <script>
+    angular.module("app", []);
+
+
+    angular.module("app").controller("teste", function ($scope,$http) {
+      
+      
+      $scope.$watch('busca', function() {
+      
+
+
+	var nova = $scope.busca.replace(" ","+");
+
+  
+        movies=$http({method: 'GET',url: "http://theapache64.xyz:8080/movie_db/search?keyword=" + nova + ""}).then(function(result){
+
+	console.log(result.data);
+	var movie = angular.fromJson(result.data);
+	$scope.loockup = movie.data;
+
+
+
+});
+
+        
+     
+    });
+      
+
+  });
+    
+  </script>
+
+    </head>
+    <body ng-controller="teste">
+
+
+   <div class="jumbotron text-center">
+      <div class="page-header">
+	
+    <h1><a href="/"> The Movie Magnetic </a></h1>
+                  </div>
+
+  <p>Smart Downloads</p>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Busca rápida</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/../">Home</a></li>
+      <li><a href="/../series">Series</a></li>
+      <li><a href="/../movies">Movies</a></li>
+      <li><a href="/../games">Games</a></li>
+      
+    
+    {% verbatim  %}
+    <li><input class="form-control" type="text" ng-model="busca"/>
+</li>
+
+<a href="/movie/id/{{ loockup.imdb_id}}/?ref_=nv_sr_1">
+<img src="{{ loockup.poster_url }}"> </img>
+</a>
+
+  </div>
+
+
+
+</li>
+</div>
+      
+      
+     
+    </ul>
+  </div>
+</nav>    
+
+      {% endverbatim %}
+      
+      
+
+
+        
+        
+      
+    
+  </div>
+                                                                                                                                                    
+                                                                                                                                                    
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h3>Categorias  {{app}}</h3>
+       <a href="/top250"><p>Top Rated Movies IMDB</p></a>
+       <a href="/../series/topseries"><p>Top Rated Series IMDB</p></a>
+
+    </div>
+    <div class="col-sm-6">
+{% block meio %}
+
+
+      
+
+
+{% endblock %}
+
+    </div>
+    <div class="col-sm-3">
+      <h3>Por gênero</h3>
+      <p>Top IMDB Ação</p>
+      <p>Top IMDB Drama</p>
+      <p>Top IMDB Animação</p>
+	<p>Top IMDB Comédia</p>
+      <p>Top IMDB Drama </p>
+       <p>Top IMDB Terror </p>
+	<p><a href=aventura>TOP IMDB Aventura</a> </p>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+    </body>
+</html>
+            

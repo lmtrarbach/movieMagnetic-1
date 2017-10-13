@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+{% load tags_filters %}
+
+        {% block meio %}   
+        
+
+                
+               <h1> {{ title }}</h1>
+		<img src="{{ poster }}"> </img>
+
+		<a href="{{ title | magnetize }}"><h2> Download</h2> </a>
+			
+
+
+ {% endblock %}
+
+

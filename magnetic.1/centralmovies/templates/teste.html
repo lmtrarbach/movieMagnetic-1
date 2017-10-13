@@ -1,0 +1,62 @@
+<html ng-app="angular">
+    <head>
+        <title>IMDB Pirate</title>
+        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <script type="text/javascript" src={% static 'angular-1.6.6/angular.min.js' %}> </script>
+        <script type="text/javascript" src={% static 'jquery-3.2.1.min.js' %}> </script>
+        <link rel="stylesheet" href="{% static 'css/pagina.css' %}">
+        <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+        <script>   
+                  angular.module('angular',[]);
+                  angular.controller('teste') function($scope) {
+                  $scope.teste="Testando";
+                  console.log($scope.procura);
+};   
+                  
+
+        </script>
+    </head>
+    <body ng-controller="teste">
+
+
+   <div class="jumbotron text-center">
+      <div class="page-header">
+	
+    <h1><a href="/"> The Movie Magnetic </a></h1>
+                  </div>
+
+  <p>Download de forma inteligente</p>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Busca rápida</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/../">Home</a></li>
+      <li><a href="/../series">Series</a></li>
+      <li><a href="/../movies">Movies</a></li>
+      <li><a href="/../games">Games</a></li>
+      <li><input type="text" ng-model="teste"/>
+      <h1>{{ Testando }}</h1>
+      {{ procura }}</li>
+
+
+        
+        
+      
+    </ul>
+  </div>
+</nav>
+  
+
+
+    </body>
+</html>
+            
+
+    </body>
+</html>

@@ -1,0 +1,33 @@
+
+{% extends "base.html" %}
+{% load eximaginate %}
+{% load tags_filters %}
+
+        {% block meio %}   
+        
+<h1> Season </h1>
+	
+	
+
+<div class="row">
+<h2> Episodes </h2>
+
+{% for episode in data %}
+<div class="col-xs-6 col-md-4 col-md-pull-2">
+	
+	<img src="{{ episode.1 }}"/>
+	<a href= "{{ episode.2 | magnetize }}"<h3> Download {{ episode.2 }} </h3></a>
+	
+</div>
+
+{% endfor %}
+</div>
+
+       
+
+
+
+
+ {% endblock %}
+
+

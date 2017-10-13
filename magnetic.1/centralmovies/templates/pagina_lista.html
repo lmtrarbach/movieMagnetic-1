@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load eximaginate %}
+
+
+{% load staticfiles %}
+{% load tags_filters %}
+<link rel="stylesheet" href="{% static 'css/pagina.css' %}">
+  {% block meio %}
+
+        {% for each in data %}
+       <div>
+	<h3> {{ each.0 }} </h3>
+	<img src="{{ each.1 }}"/>
+
+<a href= "{{ each.0 | magnetize }}"> Download magnetic </a>
+
+
+        </div>
+        {% endfor %}
+
+
+  {% endblock %}
+
+
+
+
+
+
+
+
+
+
+

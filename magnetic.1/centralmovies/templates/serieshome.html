@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+{% load tags_filters %}
+
+        {% block meio %}   
+
+
+<div class="row">
+<form class="row" role="search">
+        
+          <input type="text" name="search" class="span1" placeholder="Search">
+        <button type="submit" class="btn btn-default" action="/../series/search"   method="get">Submit</button>
+      </form> 
+<div class="col-md-12"> <h1> Search by Genre </h1></div>
+<div class="col-md-12"> <h1> </h1></div>
+ 
+ {% for each in data %}
+
+
+<div class="col-xs-6 col-md-4 col-md-pull-2"><a href=genre/{{ each.genre }}><h3 class="text-center">{{ each.genre }}</h3></a></div>
+	{% endfor %}
+</div>
+
+{% endblock %}
+
+ 
